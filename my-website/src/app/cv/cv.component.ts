@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class CvComponent {
   downloadElement() {
-    console.log('allo');
     let link = document.createElement('a');
     link.setAttribute('type', 'hidden');
     link.href = 'resources/CV_GL.pdf';
