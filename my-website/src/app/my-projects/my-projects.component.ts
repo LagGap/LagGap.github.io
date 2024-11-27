@@ -22,7 +22,7 @@ export class MyProjectsComponent {
    {
     "id": 1,
     "image":"resources/blingLand.png", 
-    "name": "Test2",
+    "name": "Bling Land",
     "description": "Description2",
     "hyperlink" : "https://krahab.itch.io/blingland"
    }
