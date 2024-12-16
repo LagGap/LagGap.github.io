@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 
 export class NavbarComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
-  private subscription!: Subscription;
+  private translateSubscription!: Subscription;
   protected readonly frenchArray: string[] = [
     'À propos',
     'Mes projets',
@@ -30,14 +30,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
   constructor(private translateService: TranslateService) {}
 
   ngOnInit(): void {
-    this.subscription = this.translateService.translate$.subscribe((data) => {
+    this.translateSubscription = this.translateService.translate$.subscribe((data) => {
       this.isFrench = !data;
       this.translateComponent(this.isFrench);
     });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.translateSubscription.unsubscribe();
   }
 
   changeLanguageEvent(event: Event) {
@@ -45,19 +45,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.translateService.emitEvent(this.isFrench);
   }
 
-  translateComponent(data: any) {
-    const navbar = document.getElementById('navbar-to-translate');
-    const linkElements = navbar?.querySelectorAll('a');
+  translateComponent(data: boolean) {
+    const linkElements = document.getElementById('navbar-to-translate')?.querySelectorAll('a');
     const arrayToUse : string[] = data? this.frenchArray: this.englishArray;
     const newLanguage : string = data? 'fr-CA' : 'en-CA';
+    
     let arrayIndex = 0;
 
-    document.documentElement.lang = newLanguage;
+    document.documentElement.lang = newLanguage; // TODO devrait être changer d'endroit-> pourquoi la navbar s'occupe du document au complet
     linkElements?.forEach((element) => {
       element.innerHTML = arrayToUse[arrayIndex];
       arrayIndex++;
     });
-    
-    arrayIndex = 0;
   }
 }

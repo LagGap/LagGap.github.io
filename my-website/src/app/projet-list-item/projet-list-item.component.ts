@@ -11,4 +11,8 @@ import { ProjectLocation } from '../project-location';
 })
 export class ProjetListItemComponent {
   @Input() projectLocation!: ProjectLocation;
+
+  test(){
+    console.log("allio")
+  }
 }

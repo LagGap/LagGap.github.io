@@ -1,6 +1,6 @@
 <section class="project-item-section rounded border border-warning text-warning">
     <img class="project-item-section" width="600" height="400" [src]="projectLocation.image" alt="Image of project {{projectLocation.name}}">
     <h2>{{projectLocation.name}}</h2>
-    <p class="text-light project-item-text">{{projectLocation.description}}</p>
+    <p class="text-light project-item-text">{{projectLocation.description[0]}}</p>
     <a class="btn btn-primary text-dark" [href]="projectLocation.hyperlink">Consulter le projet</a>
 </section>
