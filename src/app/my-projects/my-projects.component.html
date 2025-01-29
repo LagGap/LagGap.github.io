@@ -1,3 +1,7 @@
-<section id="projet-list-section" class="text-center text-light">
-   <app-projet-list-item *ngFor="let projectLocation of projetLocationList" [projectLocation] = "projectLocation"></app-projet-list-item>
-</section> 
+<section id="projet-list-section" class="text-light row">
+  <app-projet-list-item class="col"
+    *ngFor="let projectLocation of projetLocationList"
+    [projectLocation]="projectLocation"
+  >
+  </app-projet-list-item>
+</section>

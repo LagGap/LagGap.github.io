@@ -1,8 +1,14 @@
 .project-item-section{
-    margin: 2.5%;
+    background: radial-gradient(ellipse at center, #2b517c 0%,#090a0f 100%);
 }
 
 .project-item-text{
     margin-left: 7.5%;
     margin-right: 7.5%;
+}
+.project-item-img{
+    margin: 2.5%;
+}
+.project-item-hyperlink{
+    margin-bottom: 2.5%;
 }
