@@ -7,7 +7,9 @@
     margin-right: 7.5%;
 }
 .project-item-img{
-    margin: 2.5%;
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
 }
 .project-item-hyperlink{
     margin-bottom: 2.5%;

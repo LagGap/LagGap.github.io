@@ -1,6 +1,6 @@
-<section class="project-item-section rounded border border-warning text-warning col">
-    <img class="project-item-img" width="450" height="400" [src]="projectLocation.image" alt="Image of project {{projectLocation.name}}">
+<section class="project-item-section rounded border border-warning text-warning">
+    <img class="project-item-img" [src]="projectLocation.image" alt="Image of project {{projectLocation.name}}">
     <h2>{{projectLocation.name}}</h2>
     <p class="text-light project-item-text">{{projectLocation.description[0]}}</p>
-    <a class="btn btn-primary text-light project-item-" [href]="projectLocation.hyperlink">Consulter le projet</a>
+    <a class="btn btn-primary text-light project-item-hyperlink" [href]="projectLocation.hyperlink">Consulter le projet</a>
 </section>

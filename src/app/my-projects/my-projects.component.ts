@@ -34,6 +34,16 @@ export class MyProjectsComponent implements OnInit, OnDestroy {
       ],
       hyperlink: 'https://krahab.itch.io/blingland',
     },
+    {
+      id: 1,
+      image: 'resources/blingland/blingLand.png',
+      name: 'Bling Land',
+      description: [
+        "Avec trois autres collègues rencontrés au cégep, nous avons décidé d'expérimenter avec Godot pour découvrir ce programme. Pour ce faire, nous avons créé Bling Land. Dans ce jeu fortement inspiré de Kingdom Two Crowns, le joueur doit fortifier son royaume, recruter des villageois et le défendre contre des envahisseurs, Dans ce projet j'ai principalement contribué aux menus",
+        'With three other colleagues I met at Cégep, we decided to experiment with Godot to explore this software. To do so, we created Bling Land. In this game, heavily inspired by Kingdom Two Crowns, the player must fortify their kingdom, recruit villagers, and defend it against invaders. For this project, I primarily contributed to the menus.',
+      ],
+      hyperlink: 'https://krahab.itch.io/blingland',
+    },
   ];
 
   isFrench: boolean = true;
