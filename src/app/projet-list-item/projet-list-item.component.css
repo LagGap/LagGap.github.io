@@ -1,4 +1,5 @@
 .project-item-section{
+    height: 100%;
     background: radial-gradient(ellipse at center, #2b517c 0%,#090a0f 100%);
 }
 
@@ -9,7 +10,6 @@
 .project-item-img{
     max-width: 100%;
     height: auto;
-    width: auto\9;
 }
 .project-item-hyperlink{
     margin-bottom: 2.5%;
