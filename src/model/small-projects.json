@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "name": "Task Tracker",
+        "description": [
+            "Dans le cadre du projet Roadmap.sh, j'ai dû créer un gestionnaire de tâches en CLI (Command Line Interface). Ce gestionnaire permet à un utilisateur de créer, ajouter, modifier, supprimer des tâches, ainsi que de les afficher par catégorie ou non. Cette application a été développée en Java, ce qui a été à la fois un retour aux sources et un défi pour moi : un retour parce que Java fut l'un des premiers langages de programmation que j'ai appris, mais aussi un défi car j'ai dû apprendre à interagir avec un fichier JSON sans utiliser de bibliothèque externe. Pour ce faire, j'ai un répertoire qui gère les interactions entre le fichier JSON et les données. Un service s'occupe de recevoir les commandes et les données du fichier JSON. De plus, j'utilise un fichier CLI pour gérer les entrées de l'utilisateur, et pour organiser le tout, je modélise une tâche via un objet Task.", 
+            "As part of the Roadmap.sh project, I had to create a task manager in CLI (Command Line Interface). This manager allows a user to create, add, modify, delete tasks, and display them by category or not. This application was developed in Java, which was both a return and a challenge for me; a return because Java was one of the first programming languages I learned, but also a challenge because I had to learn interactions with a JSON file without using any external libraries. To achieve this, I have a repository that handles interactions between the JSON file and the data. A service receives commands and data from the JSON file. Additionally, I use a CLI file to manage user inputs, and to organize everything, I model a task using a Task object."
+        ],
+        "hyperlink": "https://github.com/LagGap/TaskTracker"
+    },
+    {
+        "id": 1,
+        "name": "Unit Converter",
+        "description": [
+            "Pour le projet Roadmap.sh, j'ai créé une application web où un utilisateur remplit un formulaire pour convertir des unités, qu'il s'agisse de longueur, de poids ou de température. Pour ce faire, j'ai utilisé la suite .NET et son modèle MVC. L'application comprend des vues, qui représentent l'aspect visuel de l'application, un contrôleur qui gère les interactions entre les différentes vues, et des modèles qui servent à représenter les entrées de l'utilisateur. Mon principal défi avec cette application a été d'apprendre la suite .NET et de comprendre comment interagir entre les formulaires, les vues, les modèles et le contrôleur.",
+            "For the Roadmap.sh project, I created a web application where a user fills out a form to convert units, such as length, weight, or temperature. To achieve this, I used the .NET framework and its MVC (Model-View-Controller) pattern. The application includes views, which represent the visual aspect of the application, a controller that handles interactions between the different views, and models that represent the user's inputs. My main challenge with this application was learning the .NET framework and understanding how to interact between forms, views, models, and the controller."
+        ],
+        "hyperlink": "https://github.com/LagGap/unit-converter"
+    }
+]
