@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectLocation } from '../project-location';
+import { ProjectLocation } from '../entities/project-location';
 
 @Component({
   selector: 'app-projet-list-item',
@@ -11,8 +11,4 @@ import { ProjectLocation } from '../project-location';
 })
 export class ProjetListItemComponent {
   @Input() projectLocation!: ProjectLocation;
-
-  test(){
-    console.log("allio")
-  }
 }

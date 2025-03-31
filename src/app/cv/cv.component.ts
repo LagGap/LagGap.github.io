@@ -13,11 +13,11 @@ export class CvComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
   private translateSubscription!: Subscription;
   protected readonly frenchArray: string[] = [
-    'Pour connaître mon expérience en de plus grands détails, explorer mon curiculum vitae.',
+    'Pour connaître mon expérience en plus grands détails, explorez mon curriculum vitae.',
     'Telécharger mon CV',
   ];
   protected readonly englishArray: string[] = [
-    'To learn more about my experience in greater detail, explore my resume.',
+    'To learn more about my experience in greater details, explore my resume.',
     'Download my resume',
   ];
   constructor(private translateService: TranslateService) {}

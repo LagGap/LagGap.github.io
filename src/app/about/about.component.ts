@@ -15,11 +15,11 @@ export class AboutComponent implements OnInit, OnDestroy {
 
   protected readonly frenchArray: string[] = [
     'Bienvenue!',
-    "Je suis présentement à la recherche d'un emploi après avoir terminé mes études. Sur cette page, vous trouverez les informations à mon sujet: les projets auxquels j'ai participé, une copie de mon curiculum vitae et un lien vers mon courriel",
+    "Je suis présentement à la recherche d'un emploi après avoir terminé mes études. Sur cette page, vous trouverez des informations à mon sujet : les projets auxquels j'ai participé, une copie de mon curriculum vitae et un lien vers mon courriel.",
   ];
   protected readonly englishArray: string[] = [
     'Welcome!',
-    'I am currently looking for a job after completing my studies. On this page, you will find information about me: the projects I have participated in, a copy of my resume, and a link to my email',
+    'I am currently looking for a job after completing my studies. On this page, you will find information about me: the projects I have participated in, a copy of my resume, and a link to my email.',
   ];
 
   constructor(private translateService: TranslateService) {}

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjetListItemComponent } from '../projet-list-item/projet-list-item.component';
-import { ProjectLocation } from '../project-location';
+import { ProjectLocation } from '../entities/project-location';
 import { TranslateService } from '../services/translate.service';
 import { elementAt, Subscription } from 'rxjs';
 import * as projectLocationListJSON from '../../model/projects.json';
