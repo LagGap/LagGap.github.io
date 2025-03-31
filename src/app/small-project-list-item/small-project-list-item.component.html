@@ -1,1 +1,5 @@
-<p>small-project-list-item works!</p>
+<section class="rounded border border-white text-warning mt-4">
+    <h3>{{smallProjectLocation.name}}</h3>
+    <p class="text-light project-item-text m-2">{{smallProjectLocation.description[0]}}</p>
+    <a class="btn btn-primary text-light mb-2" [href]="smallProjectLocation.hyperlink">Consulter le projet</a>
+</section>
