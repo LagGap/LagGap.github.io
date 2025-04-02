@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SmallProjectLocation } from '../entities/small-project-location';
+import { SmallProjectLocation } from '../../entities/small-project-location';
 
 @Component({
   selector: 'app-small-project-list-item',

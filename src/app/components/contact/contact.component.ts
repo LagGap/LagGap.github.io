@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TranslateService } from '../services/translate.service';
+import { TranslateService } from '../../services/translate.service';
 import { Subscription } from 'rxjs';
+import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,9 @@ import { Subscription } from 'rxjs';
 export class ContactComponent implements OnInit, OnDestroy {
   isFrench : boolean = true
   private translateSubscription!: Subscription;
+  private translateService: TranslateService;
+  private translationStrategy: TranslationStrategy;
+  
   protected readonly frenchArray: string[] = [
     "Me Contacter",
     "Pour me contacter utilisez l'address courriel suivante: gabriellaperle&#64;gmail.com",
@@ -25,7 +29,10 @@ export class ContactComponent implements OnInit, OnDestroy {
     "By email"
   ];
 
-  constructor(private translateService: TranslateService){}
+  constructor(translateService: TranslateService, translationStrategy: TranslationStrategy){
+    this.translateService = translateService;
+    this.translationStrategy = translationStrategy;
+  }
 
   ngOnInit(): void {
     this.translateSubscription = this.translateService.translate$.subscribe((data) => {
@@ -42,12 +49,6 @@ export class ContactComponent implements OnInit, OnDestroy {
     const textElements = document.getElementById("contact")?.querySelectorAll("h2, p, a")
     const arrayToUse : string[] = isFrench? this.frenchArray: this.englishArray;
 
-    let arrayIndex = 0;
-
-    textElements?.forEach((text) => {
-      text.innerHTML = arrayToUse[arrayIndex]
-      arrayIndex++;
-    })
+    this.translationStrategy.translateComponent(arrayToUse, textElements!);
   }
-
 }

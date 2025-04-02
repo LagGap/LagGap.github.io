@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TranslateService } from '../services/translate.service';
+import { TranslateService } from '../../services/translate.service';
+import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,6 +13,8 @@ import { Subscription } from 'rxjs';
 export class AboutComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
   private translateSubscription!: Subscription;
+  private translateService: TranslateService;
+  private translationStrategy: TranslationStrategy;
 
   protected readonly frenchArray: string[] = [
     'Bienvenue!',
@@ -22,7 +25,13 @@ export class AboutComponent implements OnInit, OnDestroy {
     'I am currently looking for a job after completing my studies. On this page, you will find information about me: the projects I have participated in, a copy of my resume, and a link to my email.',
   ];
 
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    translateService: TranslateService,
+    translationStrategy: TranslationStrategy
+  ) {
+    this.translateService = translateService;
+    this.translationStrategy = translationStrategy;
+  }
 
   ngOnInit(): void {
     this.translateSubscription = this.translateService.translate$.subscribe(
@@ -46,12 +55,6 @@ export class AboutComponent implements OnInit, OnDestroy {
       .getElementById('div-to-translate')
       ?.querySelectorAll('h1, p');
 
-    let arrayIndex = 0;
-
-    textElements?.forEach((text) => {
-      text.innerHTML = arrayToUse[arrayIndex];
-      arrayIndex++;
-    });
-    arrayIndex = 0;
+    this.translationStrategy.translateComponent(arrayToUse, textElements!);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TranslateService } from '../services/translate.service';
+import { TranslateService } from '../../services/translate.service';
 import { Subscription } from 'rxjs';
+import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
   selector: 'app-cv',
@@ -12,6 +13,8 @@ import { Subscription } from 'rxjs';
 export class CvComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
   private translateSubscription!: Subscription;
+  private translateService: TranslateService;
+  private translationStrategy: TranslationStrategy;
   protected readonly frenchArray: string[] = [
     'Pour connaître mon expérience en plus grands détails, explorez mon curriculum vitae.',
     'Telécharger mon CV',
@@ -20,7 +23,10 @@ export class CvComponent implements OnInit, OnDestroy {
     'To learn more about my experience in greater details, explore my resume.',
     'Download my resume',
   ];
-  constructor(private translateService: TranslateService) {}
+  constructor(translateService: TranslateService, translationStrategy: TranslationStrategy) {
+    this.translateService = translateService;
+    this.translationStrategy = translationStrategy;
+  }
 
   ngOnInit(): void {
     this.translateSubscription = this.translateService.translate$.subscribe(
@@ -40,13 +46,8 @@ export class CvComponent implements OnInit, OnDestroy {
       ? this.frenchArray
       : this.englishArray;
     const textElements = document.getElementById("cv-div")?.querySelectorAll('p, button');
-
-    let arrayIndex = 0;
-
-    textElements?.forEach((text) => {
-      text.innerHTML = arrayToUse[arrayIndex];
-      arrayIndex++;
-    });
+    
+    this.translationStrategy.translateComponent(arrayToUse, textElements!);
   }
 
   downloadElement() {

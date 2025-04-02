@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ContactComponent } from "./contact/contact.component";
-import { FooterComponent } from "./footer/footer.component";
-import { CvComponent } from "./cv/cv.component";
-import { MyProjectsComponent } from "./my-projects/my-projects.component";
-import { AboutComponent } from "./about/about.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ContactComponent } from "./components/contact/contact.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { CvComponent } from "./components/cv/cv.component";
+import { MyProjectsComponent } from "./components/my-projects/my-projects.component";
+import { AboutComponent } from "./components/about/about.component";
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TranslateService } from '../services/translate.service';
+import { TranslateService } from '../../services/translate.service';
 import { Subscription } from 'rxjs';
+import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
   selector: 'app-navbar',
@@ -13,6 +14,8 @@ import { Subscription } from 'rxjs';
 export class NavbarComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
   private translateSubscription!: Subscription;
+  private translateService: TranslateService;
+  private translationStrategy: TranslationStrategy;
   protected readonly frenchArray: string[] = [
     'À propos',
     'Mes projets',
@@ -27,7 +30,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     'Contact me',
     'EN / FR',
   ];
-  constructor(private translateService: TranslateService) {}
+  constructor(translateService: TranslateService, translationStrategy: TranslationStrategy) {
+    this.translateService = translateService;
+    this.translationStrategy = translationStrategy;
+  }
 
   ngOnInit(): void {
     this.translateSubscription = this.translateService.translate$.subscribe((data) => {
@@ -46,16 +52,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
 
   translateComponent(data: boolean) {
-    const linkElements = document.getElementById('navbar-to-translate')?.querySelectorAll('a');
+    const textElements = document.getElementById('navbar-to-translate')?.querySelectorAll('a');
     const arrayToUse : string[] = data? this.frenchArray: this.englishArray;
     const newLanguage : string = data? 'fr-CA' : 'en-CA';
-    
-    let arrayIndex = 0;
 
     document.documentElement.lang = newLanguage; // TODO devrait être changer d'endroit-> pourquoi la navbar s'occupe du document au complet
-    linkElements?.forEach((element) => {
-      element.innerHTML = arrayToUse[arrayIndex];
-      arrayIndex++;
-    });
+
+    this.translationStrategy.translateComponent(arrayToUse, textElements!);
+
   }
 }

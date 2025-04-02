@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectLocation } from '../entities/project-location';
+import { ProjectLocation } from '../../entities/project-location';
 
 @Component({
   selector: 'app-projet-list-item',
