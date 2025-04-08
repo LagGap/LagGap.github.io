@@ -4,11 +4,10 @@ import { Subscription } from 'rxjs';
 import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+    standalone:true,
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 
 export class NavbarComponent implements OnInit, OnDestroy {

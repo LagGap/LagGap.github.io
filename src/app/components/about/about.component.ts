@@ -4,11 +4,10 @@ import { TranslationStrategy } from '../../services/strategy/translationStrategy
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-about',
   standalone: true,
-  imports: [],
+  selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css',
+  styleUrl: './about.component.css'
 })
 export class AboutComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;

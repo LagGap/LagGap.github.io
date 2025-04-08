@@ -4,11 +4,10 @@ import { Subscription } from 'rxjs';
 import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
-  selector: 'app-cv',
   standalone: true,
-  imports: [],
+  selector: 'app-cv',
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.css',
+  styleUrl: './cv.component.css'
 })
 export class CvComponent implements OnInit, OnDestroy {
   isFrench: boolean = true;
@@ -46,7 +45,7 @@ export class CvComponent implements OnInit, OnDestroy {
       ? this.frenchArray
       : this.englishArray;
     const textElements = document.getElementById("cv-div")?.querySelectorAll('p, button');
-    
+
     this.translationStrategy.translateComponent(arrayToUse, textElements!);
   }
 

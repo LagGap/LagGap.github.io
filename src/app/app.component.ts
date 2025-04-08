@@ -8,11 +8,10 @@ import { MyProjectsComponent } from "./components/my-projects/my-projects.compon
 import { AboutComponent } from "./components/about/about.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [NavbarComponent, ContactComponent, FooterComponent, CvComponent, MyProjectsComponent, AboutComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [NavbarComponent, ContactComponent, FooterComponent, CvComponent, MyProjectsComponent, AboutComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent  {
   title = 'my-website';

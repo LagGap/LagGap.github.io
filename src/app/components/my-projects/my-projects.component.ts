@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjetListItemComponent } from '../projet-list-item/projet-list-item.component';
 import { ProjectLocation } from '../../entities/project-location';
@@ -11,15 +11,11 @@ import { SmallProjectLocation } from '../../entities/small-project-location';
 import { MyProjectsTranslationStrategy } from '../../services/strategy/MyProjectsTranslationStrategy';
 
 @Component({
-  selector: 'app-my-projects',
-  standalone: true,
-  imports: [
-    ProjetListItemComponent,
-    CommonModule,
-    SmallProjectListItemComponent,
-  ],
-  templateUrl: './my-projects.component.html',
-  styleUrl: './my-projects.component.css',
+    selector: 'app-my-projects',
+    standalone: true,
+    imports: [CommonModule, ProjetListItemComponent, SmallProjectListItemComponent],
+    templateUrl: './my-projects.component.html',
+    styleUrl: './my-projects.component.css'
 })
 export class MyProjectsComponent implements OnInit, OnDestroy {
   private translateSubscription!: Subscription;

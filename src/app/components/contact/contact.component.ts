@@ -4,18 +4,17 @@ import { Subscription } from 'rxjs';
 import { TranslationStrategy } from '../../services/strategy/translationStrategy';
 
 @Component({
-  selector: 'app-contact',
   standalone: true,
-  imports: [],
+  selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit, OnDestroy {
-  isFrench : boolean = true
+  isFrench: boolean = true
   private translateSubscription!: Subscription;
   private translateService: TranslateService;
   private translationStrategy: TranslationStrategy;
-  
+
   protected readonly frenchArray: string[] = [
     "Me Contacter",
     "Pour me contacter utilisez l'address courriel suivante: gabriellaperle&#64;gmail.com",
@@ -29,7 +28,7 @@ export class ContactComponent implements OnInit, OnDestroy {
     "By email"
   ];
 
-  constructor(translateService: TranslateService, translationStrategy: TranslationStrategy){
+  constructor(translateService: TranslateService, translationStrategy: TranslationStrategy) {
     this.translateService = translateService;
     this.translationStrategy = translationStrategy;
   }
@@ -47,7 +46,7 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   translateComponent(isFrench: boolean) {
     const textElements = document.getElementById("contact")?.querySelectorAll("h2, p, a")
-    const arrayToUse : string[] = isFrench? this.frenchArray: this.englishArray;
+    const arrayToUse: string[] = isFrench ? this.frenchArray : this.englishArray;
 
     this.translationStrategy.translateComponent(arrayToUse, textElements!);
   }
