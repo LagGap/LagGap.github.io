@@ -52,7 +52,7 @@ export class CvComponent implements OnInit, OnDestroy {
   downloadElement() {
     let link = document.createElement('a');
     link.setAttribute('type', 'hidden');
-    link.href = 'resources/CV_GL.pdf-4';
+    link.href = 'resources/CV_GL-4.pdf';
     link.download = '';
     document.body.appendChild(link);
     link.click();
