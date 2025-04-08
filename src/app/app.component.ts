@@ -8,6 +8,7 @@ import { MyProjectsComponent } from "./components/my-projects/my-projects.compon
 import { AboutComponent } from "./components/about/about.component";
 
 @Component({
+    standalone:true,
     selector: 'app-root',
     imports: [NavbarComponent, ContactComponent, FooterComponent, CvComponent, MyProjectsComponent, AboutComponent],
     templateUrl: './app.component.html',
