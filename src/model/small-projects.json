@@ -16,14 +16,5 @@
             "For the Roadmap.sh project, I created a web application where a user fills out a form to convert units, such as length, weight, or temperature. To achieve this, I used the .NET framework and its MVC (Model-View-Controller) pattern. The application includes views, which represent the visual aspect of the application, a controller that handles interactions between the different views, and models that represent the user's inputs. My main challenge with this application was learning the .NET framework and understanding how to interact between forms, views, models, and the controller."
         ],
         "hyperlink": "https://github.com/LagGap/unit-converter"
-    },
-    {
-        "id": 2,
-        "name": "Expense Tracker",
-        "description": [
-            "Ce projet de roadmap.sh a pour objectif de créer une API permettant à un utilisateur de suivre ses dépenses. J'ai décidé de le réaliser en Java. Parmi les contraintes présentées, je dois également implémenter une authentification via un JSON Web Token et connecter mon API à une base de données. Dans ce projet, je compte aussi implémenter une interface utilisateur.",
-            "The goal of this roadmap.sh project is to create an API that allows a user to track their expenses. I have decided to implement it in Java. Among the constraints presented, I must also implement authentication via a JSON Web Token and connect my API to a database. In this project, I also plan to implement a user interface."
-        ],
-        "hyperlink": "https://github.com/LagGap/ExpenseTracker"
     }
 ]

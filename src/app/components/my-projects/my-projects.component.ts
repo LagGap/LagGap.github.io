@@ -31,9 +31,9 @@ export class MyProjectsComponent implements OnInit, OnDestroy {
 
   isFrench: boolean = true;
 
-  constructor(translateService: TranslateService, translationStrategy: MyProjectsTranslationStrategy) {
+  constructor(translateService: TranslateService, myProjectsTranslationStrategy: MyProjectsTranslationStrategy) {
     this.translateService = translateService;
-    this.translationStrategy = translationStrategy;
+    this.translationStrategy = myProjectsTranslationStrategy;
   }
 
   ngOnInit(): void {
@@ -62,3 +62,14 @@ export class MyProjectsComponent implements OnInit, OnDestroy {
     this.translationStrategy.translateHyperlink(projectListItemsHyperlink!, this.isFrench)
   }
 }
+    /*{
+      Remettre dans /model/small-projects.json lorsque le projet sera terminé
+
+        "id": 2,
+        "name": "Expense Tracker",
+        "description": [
+            "Ce projet de roadmap.sh a pour objectif de créer une API permettant à un utilisateur de suivre ses dépenses. J'ai décidé de le réaliser en Java. Parmi les contraintes présentées, je dois également implémenter une authentification via un JSON Web Token et connecter mon API à une base de données. Dans ce projet, je compte aussi implémenter une interface utilisateur.",
+            "The goal of this roadmap.sh project is to create an API that allows a user to track their expenses. I have decided to implement it in Java. Among the constraints presented, I must also implement authentication via a JSON Web Token and connect my API to a database. In this project, I also plan to implement a user interface."
+        ],
+        "hyperlink": "https://github.com/LagGap/ExpenseTracker"
+    }*/
